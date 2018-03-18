@@ -19,15 +19,15 @@ class ListCousineViewModel: BaseViewModel {
     
     func listCousine() {
         self.loading.value = true
-        APIClient.listCousine().subscribe { [weak self] (event) in
+        APIClient.listCousine().subscribe { [unowned self] (event) in
             switch event {
             case .next(let cousines):
-                self?.error.value = nil
-                self?.cousines.value = cousines
+                self.error.value = nil
+                self.cousines.value = cousines
             case .error(let error):
-                self?.error.value = error
+                self.error.value = error
             case .completed:
-                self?.loading.value = false
+                self.loading.value = false
             }
         }.disposed(by: disposeBag)
     }

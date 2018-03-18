@@ -30,5 +30,17 @@ class APIClient {
             .map([Product].self)
             .asObservable()
     }
+    
+    static func login(with email: String, password: String) -> Observable<String> {
+        return DefaultProvider.rx.request(.login(email: email, password: password))
+            .mapString()
+            .asObservable()
+    }
+    
+    static func signUp(with email: String, name: String, address: String, password: String) -> Observable<String> {
+        return DefaultProvider.rx.request(.signUp(email: email, name: name, address: address, password: password))
+            .mapString()
+            .asObservable()
+    }
 
 }

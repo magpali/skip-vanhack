@@ -13,6 +13,8 @@ enum DefaultTarget {
     case listCousine()
     case listStore(cousineId: Int)
     case listProducts(storeId: Int)
+    case login(email: String, password: String)
+    case signUp(email: String, name: String, address: String, password: String)
 }
 
 extension DefaultTarget: TargetType {
@@ -28,6 +30,10 @@ extension DefaultTarget: TargetType {
             return "Cousine/\(cousineId)/stores"
         case .listProducts(let storeId):
             return "Store/\(storeId)/products"
+        case .login:
+            return "Customer/auth"
+        case .signUp:
+            return "Customer"
         }
     }
     
@@ -35,6 +41,8 @@ extension DefaultTarget: TargetType {
         switch self {
         case .listCousine, .listStore, .listProducts:
             return .get
+        case .login, .signUp:
+            return .post
         }
     }
     
@@ -48,11 +56,23 @@ extension DefaultTarget: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        var headers = ["Content-Type": "application/json"]
+        if let token = AuthHelper.getToken() {
+            headers["Authorization"] = "Bearer \(token)"
+        }
+        return headers
     }
     
     var parameters: [String: Any]? {
         switch self {
+        case let .login(email, password):
+            return ["email": email as Any,
+                    "password": password as Any]
+        case let .signUp(email, name, address, password):
+            return ["email": email as Any,
+                    "name": name as Any,
+                    "address": address as Any,
+                    "password": password as Any]
         case .listCousine, .listStore, .listProducts:
             return nil
         }

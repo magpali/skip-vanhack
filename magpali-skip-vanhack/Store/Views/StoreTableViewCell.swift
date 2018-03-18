@@ -28,5 +28,11 @@ class StoreTableViewCell: UITableViewCell {
         addressLabel.font = .systemFont(ofSize: 14)
         addressLabel.numberOfLines = 0
     }
+        
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.text = nil
+        addressLabel.text = nil
+    }
     
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="magpali_skip_vanhack" customModuleProvider="target">
+            <connections>
+                <outlet property="clearCartButton" destination="GCG-3b-Jr7" id="bzS-46-QbO"/>
+                <outlet property="placeOrderButton" destination="7XC-7v-UJZ" id="3HU-h9-IDr"/>
+                <outlet property="tableView" destination="KdR-Ja-9rz" id="dey-U4-nWq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KdR-Ja-9rz">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-Q8-24x">
+                    <rect key="frame" x="0.0" y="621" width="375" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCG-3b-Jr7">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XC-7v-UJZ">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KdR-Ja-9rz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4FQ-R7-7IK"/>
+                <constraint firstItem="KdR-Ja-9rz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="895-eB-Yrd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zfp-Q8-24x" secondAttribute="bottom" constant="16" id="A22-YV-13Z"/>
+                <constraint firstItem="zfp-Q8-24x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="G0c-XY-YXC"/>
+                <constraint firstItem="KdR-Ja-9rz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fL9-x9-VBV"/>
+                <constraint firstItem="zfp-Q8-24x" firstAttribute="top" secondItem="KdR-Ja-9rz" secondAttribute="bottom" constant="30" id="fjj-kK-Baz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zfp-Q8-24x" secondAttribute="trailing" id="kZT-fG-ekf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

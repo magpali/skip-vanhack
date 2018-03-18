@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  magpali-skip-vanhack
+
+  Created by Victor Robertson on 18/03/18.
+  Copyright © 2018 magpali. All rights reserved.
+*/
+
+//Login
+"login.email" = "E-mail:";
+"login.password" = "Password:";
+"login.signin" = "Sign In";
+"login.signup" = "Sign Up";
+//Product
+"product.add.to.cart.title" = "Add To Cart";
+"product.add.to.cart.message" = "Do you want to add this product to your cart?";
+"product.add.to.cart.add" = "Add";
+"product.add.to.cart.cancel" = "Cancel";
+//Cart
+"cart.place.order" = "Place Order";
+"cart.clear.cart" = "Clear Cart";

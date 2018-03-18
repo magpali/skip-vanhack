@@ -21,11 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tab = UITabBarController()
         let cousineVc = ListCousineViewController()
         let nav = UINavigationController(rootViewController: cousineVc)
-        let cart = UIViewController()
+        let cart = CartViewController()
         cart.title = "Cart"
         tab.setViewControllers([nav, cart], animated: true)
         window?.rootViewController = tab
         tabBar = tab
+        
+        AuthHelper.logOut()
+        
         return true
     }
     

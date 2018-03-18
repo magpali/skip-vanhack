@@ -32,5 +32,12 @@ class ProductsTableViewCell: UITableViewCell {
         priceLabel.text = "$\(product.price?.moneyFormat() ?? "no value")"
         detailedInfoLabel.text = product.detailedInfo
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.text = nil
+        priceLabel.text = nil
+        detailedInfoLabel.text = nil
+    }
 
 }

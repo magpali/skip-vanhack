@@ -39,6 +39,7 @@ class ListProductsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         addSubviews()
         bind()
         
@@ -52,22 +53,38 @@ class ListProductsViewController: UIViewController {
                                             cell.populate(with: element)
             }.disposed(by: disposeBag)
         
-        refreshControll.rx.controlEvent(.valueChanged).subscribe(onNext: { [weak self] (_) in
-            self?.viewModel.refreshProducts()
+        refreshControll.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] (_) in
+            self.viewModel.refreshProducts()
         }).disposed(by: disposeBag)
         
-        viewModel.loading.asObservable().subscribe(onNext: { [weak self] (value) in
+        viewModel.loading.asObservable().subscribe(onNext: { [unowned self] (value) in
             if value {
-                self?.refreshControll.beginRefreshing()
+                self.refreshControll.beginRefreshing()
             } else {
-                self?.refreshControll.endRefreshing()
+                self.refreshControll.endRefreshing()
             }
         }).disposed(by: disposeBag)
         
-        tableView.rx.itemSelected.asObservable().subscribe(onNext: { [weak self] (indexPath) in
-            print(indexPath.row)
+        tableView.rx.itemSelected.asObservable().subscribe(onNext: { [unowned self] (indexPath) in
+            self.showAddToCartAlert(index: indexPath.row)
         }).disposed(by: disposeBag)
         
+    }
+    
+    func showAddToCartAlert(index: Int) {
+        let alert = UIAlertController(title: R.string.localizable.productAddToCartTitle(),
+                                      message: R.string.localizable.productAddToCartMessage(),
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        let addToCartAction = UIAlertAction(title: R.string.localizable.productAddToCartAdd(),
+                                            style: .default) { [unowned self] (action) in
+                                                self.viewModel.addProductToCart(with: index)
+        }
+        let cancelAction = UIAlertAction(title: R.string.localizable.productAddToCartCancel(),
+                                         style: .cancel,
+                                         handler: nil)
+        alert.addAction(addToCartAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func addSubviews() {

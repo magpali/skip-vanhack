@@ -29,6 +29,8 @@ class ListCousineViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         title = "Cousines"
         
         addSubviews()
@@ -44,22 +46,22 @@ class ListCousineViewController: UIViewController {
                                             cell.populate(with: element)
             }.disposed(by: disposeBag)
         
-        refreshControll.rx.controlEvent(.valueChanged).subscribe(onNext: { [weak self] (_) in
-            self?.viewModel.listCousine()
+        refreshControll.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] (_) in
+            self.viewModel.listCousine()
         }).disposed(by: disposeBag)
         
-        viewModel.loading.asObservable().subscribe(onNext: { [weak self] (value) in
+        viewModel.loading.asObservable().subscribe(onNext: { [unowned self] (value) in
             if value {
-                self?.refreshControll.beginRefreshing()
+                self.refreshControll.beginRefreshing()
             } else {
-                self?.refreshControll.endRefreshing()
+                self.refreshControll.endRefreshing()
             }
         }).disposed(by: disposeBag)
         
-        tableView.rx.itemSelected.asObservable().subscribe(onNext: { [weak self] (indexPath) in
-            guard let cousineId = self?.viewModel.cousines.value[indexPath.row].id else { return }
+        tableView.rx.itemSelected.asObservable().subscribe(onNext: { [unowned self] (indexPath) in
+            guard let cousineId = self.viewModel.cousines.value[indexPath.row].id else { return }
             let storesViewController = ListStoresViewController(cousineId: cousineId)
-            self?.navigationController?.pushViewController(storesViewController, animated: true)
+            self.navigationController?.pushViewController(storesViewController, animated: true)
         }).disposed(by: disposeBag)
         
     }

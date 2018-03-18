@@ -38,6 +38,8 @@ class ListStoresViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         title = "Stores"
         
         addSubviews()
@@ -52,23 +54,23 @@ class ListStoresViewController: UIViewController {
                                             cell.populate(with: element)
             }.disposed(by: disposeBag)
         
-        refreshControll.rx.controlEvent(.valueChanged).subscribe(onNext: { [weak self] (_) in
-            self?.viewModel.refreshStores()
+        refreshControll.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] (_) in
+            self.viewModel.refreshStores()
         }).disposed(by: disposeBag)
         
-        viewModel.loading.asObservable().subscribe(onNext: { [weak self] (value) in
+        viewModel.loading.asObservable().subscribe(onNext: { [unowned self] (value) in
             if value {
-                self?.refreshControll.beginRefreshing()
+                self.refreshControll.beginRefreshing()
             } else {
-                self?.refreshControll.endRefreshing()
+                self.refreshControll.endRefreshing()
             }
         }).disposed(by: disposeBag)
         
-        tableView.rx.itemSelected.asObservable().subscribe(onNext: { [weak self] (indexPath) in
-            guard let storeId = self?.viewModel.stores.value[indexPath.row].id,
-            let storeName = self?.viewModel.stores.value[indexPath.row].name else { return }
+        tableView.rx.itemSelected.asObservable().subscribe(onNext: { [unowned self] (indexPath) in
+            guard let storeId = self.viewModel.stores.value[indexPath.row].id,
+            let storeName = self.viewModel.stores.value[indexPath.row].name else { return }
             let productsViewController = ListProductsViewController(storeId: storeId, storeName: storeName)
-            self?.navigationController?.pushViewController(productsViewController, animated: true)
+            self.navigationController?.pushViewController(productsViewController, animated: true)
         }).disposed(by: disposeBag)
         
     }

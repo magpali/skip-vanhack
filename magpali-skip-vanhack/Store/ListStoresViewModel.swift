@@ -21,21 +21,21 @@ class ListStoresViewModel: BaseViewModel {
     }
     
     func bind() {
-        cousineId.asObservable().subscribe(onNext: { [weak self] (id) in
-            self?.listStores(by: id)
+        cousineId.asObservable().subscribe(onNext: { [unowned self] (id) in
+            self.listStores(by: id)
         }).disposed(by: disposeBag)
     }
     
     private func listStores(by cousineId: Int) {
         self.loading.value = true
-        APIClient.listStore(by: cousineId).subscribe({ [weak self] (event) in
+        APIClient.listStore(by: cousineId).subscribe({ [unowned self] (event) in
             switch event {
             case .next(let stores):
-                self?.stores.value = stores
+                self.stores.value = stores
             case .error(let error):
-                self?.error.value = error
+                self.error.value = error
             case .completed:
-                self?.loading.value = false
+                self.loading.value = false
                 break
             }
         }).disposed(by: disposeBag)

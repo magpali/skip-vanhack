@@ -21,24 +21,30 @@ class ListProductsViewModel: BaseViewModel {
     }
     
     func bind() {
-        storeId.asObservable().subscribe(onNext: { [weak self] (id) in
-            self?.listProducts(by: id)
+        storeId.asObservable().subscribe(onNext: { [unowned self] (id) in
+            self.listProducts(by: id)
         }).disposed(by: disposeBag)
     }
     
     private func listProducts(by storeId: Int) {
         self.loading.value = true
-        APIClient.listProducts(by: storeId).subscribe({ [weak self] (event) in
+        APIClient.listProducts(by: storeId).subscribe({ [unowned self] (event) in
             switch event {
             case .next(let stores):
-                self?.products.value = stores
+                self.products.value = stores
             case .error(let error):
-                self?.error.value = error
+                self.error.value = error
             case .completed:
-                self?.loading.value = false
+                self.loading.value = false
                 break
             }
         }).disposed(by: disposeBag)
+    }
+    
+    func addProductToCart(with index: Int) {
+        guard products.value.indices.contains(index) else { return }
+        let product = products.value[index]
+        CartManager.addProductToCart(product)
     }
     
     func setStoreId(id: Int) {

@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		38C432DB08E4A71FDF8689F9 /* Pods_magpali_skip_vanhack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C295F4F7D00BC4F9DFCFB246 /* Pods_magpali_skip_vanhack.framework */; };
+		5F2765B8205EFB51006EDE48 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2765B6205EFB51006EDE48 /* LoginViewController.swift */; };
+		5F2765B9205EFB51006EDE48 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2765B7205EFB51006EDE48 /* LoginViewController.xib */; };
+		5F2765BB205EFCDB006EDE48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F2765BA205EFCDB006EDE48 /* Localizable.strings */; };
+		5F2765BE205F0795006EDE48 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2765BC205F0795006EDE48 /* SignUpViewController.swift */; };
+		5F2765BF205F0795006EDE48 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2765BD205F0795006EDE48 /* SignUpViewController.xib */; };
+		5F2765C1205F0922006EDE48 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2765C0205F0922006EDE48 /* SignUpViewModel.swift */; };
+		5F2765C7205F12B6006EDE48 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2765C5205F12B6006EDE48 /* CartViewController.swift */; };
+		5F2765C8205F12B6006EDE48 /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2765C6205F12B6006EDE48 /* CartViewController.xib */; };
+		5F2765CA205F1831006EDE48 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2765C9205F1831006EDE48 /* CartManager.swift */; };
+		5F2765D2205F2299006EDE48 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2765D1205F2299006EDE48 /* CartViewModel.swift */; };
 		5F7309B9205E98FB0090869E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7309B8205E98FB0090869E /* AppDelegate.swift */; };
 		5F7309C1205E98FB0090869E /* magpali_skip_vanhack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F7309BF205E98FB0090869E /* magpali_skip_vanhack.xcdatamodeld */; };
 		5F7309C3205E98FB0090869E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F7309C2205E98FB0090869E /* Assets.xcassets */; };
@@ -25,6 +35,8 @@
 		5F7A61FE205EE61500E2F21F /* ProductsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F7A61FC205EE61500E2F21F /* ProductsTableViewCell.xib */; };
 		5F7A6201205EEB6500E2F21F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A6200205EEB6500E2F21F /* Colors.swift */; };
 		5F7A6203205EEC8900E2F21F /* ValueFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A6202205EEC8900E2F21F /* ValueFormat.swift */; };
+		5F7A620F205EF4A900E2F21F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A620E205EF4A900E2F21F /* LoginViewModel.swift */; };
+		5F7A6211205EF5E400E2F21F /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A6210205EF5E400E2F21F /* AuthHelper.swift */; };
 		5F925F23205E9E89009BFBAC /* DefaultTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F22205E9E89009BFBAC /* DefaultTarget.swift */; };
 		5F925F25205EA062009BFBAC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F24205EA062009BFBAC /* APIClient.swift */; };
 		5F925F28205EA100009BFBAC /* Cousine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F27205EA100009BFBAC /* Cousine.swift */; };
@@ -37,6 +49,16 @@
 
 /* Begin PBXFileReference section */
 		5762E0ED714A9B5B06D85C5F /* Pods-magpali-skip-vanhack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-magpali-skip-vanhack.release.xcconfig"; path = "Pods/Target Support Files/Pods-magpali-skip-vanhack/Pods-magpali-skip-vanhack.release.xcconfig"; sourceTree = "<group>"; };
+		5F2765B6205EFB51006EDE48 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5F2765B7205EFB51006EDE48 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5F2765BA205EFCDB006EDE48 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5F2765BC205F0795006EDE48 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5F2765BD205F0795006EDE48 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		5F2765C0205F0922006EDE48 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		5F2765C5205F12B6006EDE48 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		5F2765C6205F12B6006EDE48 /* CartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
+		5F2765C9205F1831006EDE48 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		5F2765D1205F2299006EDE48 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		5F7309B5205E98FB0090869E /* magpali-skip-vanhack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "magpali-skip-vanhack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7309B8205E98FB0090869E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F7309C0205E98FB0090869E /* magpali_skip_vanhack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = magpali_skip_vanhack.xcdatamodel; sourceTree = "<group>"; };
@@ -56,6 +78,8 @@
 		5F7A61FC205EE61500E2F21F /* ProductsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewCell.xib; sourceTree = "<group>"; };
 		5F7A6200205EEB6500E2F21F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5F7A6202205EEC8900E2F21F /* ValueFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueFormat.swift; sourceTree = "<group>"; };
+		5F7A620E205EF4A900E2F21F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5F7A6210205EF5E400E2F21F /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		5F925F22205E9E89009BFBAC /* DefaultTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTarget.swift; sourceTree = "<group>"; };
 		5F925F24205EA062009BFBAC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5F925F27205EA100009BFBAC /* Cousine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cousine.swift; sourceTree = "<group>"; };
@@ -80,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F2765C2205F115C006EDE48 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				5F2765C5205F12B6006EDE48 /* CartViewController.swift */,
+				5F2765C6205F12B6006EDE48 /* CartViewController.xib */,
+				5F2765D1205F2299006EDE48 /* CartViewModel.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
 		5F7309AC205E98FB0090869E = {
 			isa = PBXGroup;
 			children = (
@@ -101,17 +135,20 @@
 		5F7309B7205E98FB0090869E /* magpali-skip-vanhack */ = {
 			isa = PBXGroup;
 			children = (
-				5F7A61FF205EEB4F00E2F21F /* Helper */,
-				5F7A61E9205ECCF100E2F21F /* Base */,
+				5F2765C2205F115C006EDE48 /* Cart */,
+				5F7A6206205EEF2B00E2F21F /* Authentication */,
 				5F7A61F3205EE11F00E2F21F /* Product */,
 				5F7A61E6205ECCC300E2F21F /* Store */,
 				5F925F2C205EA8B9009BFBAC /* Cousine */,
 				5F925F26205EA0F3009BFBAC /* Model */,
+				5F7A61FF205EEB4F00E2F21F /* Helper */,
+				5F7A61E9205ECCF100E2F21F /* Base */,
 				5F925F21205E9E66009BFBAC /* API */,
 				5F7309B8205E98FB0090869E /* AppDelegate.swift */,
 				5F925F37205EAF0E009BFBAC /* R.generated.swift */,
 				5F7309C2205E98FB0090869E /* Assets.xcassets */,
 				5F7309C4205E98FB0090869E /* LaunchScreen.storyboard */,
+				5F2765BA205EFCDB006EDE48 /* Localizable.strings */,
 				5F7309C7205E98FB0090869E /* Info.plist */,
 				5F7309BF205E98FB0090869E /* magpali_skip_vanhack.xcdatamodeld */,
 			);
@@ -169,8 +206,31 @@
 			children = (
 				5F7A6200205EEB6500E2F21F /* Colors.swift */,
 				5F7A6202205EEC8900E2F21F /* ValueFormat.swift */,
+				5F7A6210205EF5E400E2F21F /* AuthHelper.swift */,
+				5F2765C9205F1831006EDE48 /* CartManager.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5F7A6206205EEF2B00E2F21F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5F7A620D205EF49400E2F21F /* View */,
+				5F7A620E205EF4A900E2F21F /* LoginViewModel.swift */,
+				5F2765C0205F0922006EDE48 /* SignUpViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		5F7A620D205EF49400E2F21F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F2765B6205EFB51006EDE48 /* LoginViewController.swift */,
+				5F2765B7205EFB51006EDE48 /* LoginViewController.xib */,
+				5F2765BC205F0795006EDE48 /* SignUpViewController.swift */,
+				5F2765BD205F0795006EDE48 /* SignUpViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5F925F21205E9E66009BFBAC /* API */ = {
@@ -292,9 +352,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F925F35205EAD50009BFBAC /* CousineTableViewCell.xib in Resources */,
+				5F2765C8205F12B6006EDE48 /* CartViewController.xib in Resources */,
 				5F7309C6205E98FB0090869E /* LaunchScreen.storyboard in Resources */,
+				5F2765B9205EFB51006EDE48 /* LoginViewController.xib in Resources */,
+				5F2765BB205EFCDB006EDE48 /* Localizable.strings in Resources */,
 				5F7A61FE205EE61500E2F21F /* ProductsTableViewCell.xib in Resources */,
 				5F7309C3205E98FB0090869E /* Assets.xcassets in Resources */,
+				5F2765BF205F0795006EDE48 /* SignUpViewController.xib in Resources */,
 				5F7A61F2205ED88B00E2F21F /* StoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,12 +454,19 @@
 				5F7A61ED205ED81100E2F21F /* ListStoresViewController.swift in Sources */,
 				5F7A61F7205EE2B700E2F21F /* ListProductsViewModel.swift in Sources */,
 				5F7A61FD205EE61500E2F21F /* ProductsTableViewCell.swift in Sources */,
+				5F2765BE205F0795006EDE48 /* SignUpViewController.swift in Sources */,
 				5F7A61F5205EE13D00E2F21F /* Product.swift in Sources */,
+				5F2765CA205F1831006EDE48 /* CartManager.swift in Sources */,
 				5F7309B9205E98FB0090869E /* AppDelegate.swift in Sources */,
+				5F7A6211205EF5E400E2F21F /* AuthHelper.swift in Sources */,
 				5F7A6203205EEC8900E2F21F /* ValueFormat.swift in Sources */,
 				5F925F38205EAF0E009BFBAC /* R.generated.swift in Sources */,
 				5F7309C1205E98FB0090869E /* magpali_skip_vanhack.xcdatamodeld in Sources */,
 				5F7A61F1205ED88B00E2F21F /* StoreTableViewCell.swift in Sources */,
+				5F2765B8205EFB51006EDE48 /* LoginViewController.swift in Sources */,
+				5F2765C1205F0922006EDE48 /* SignUpViewModel.swift in Sources */,
+				5F2765C7205F12B6006EDE48 /* CartViewController.swift in Sources */,
+				5F2765D2205F2299006EDE48 /* CartViewModel.swift in Sources */,
 				5F7A61E8205ECCDD00E2F21F /* ListStoresViewModel.swift in Sources */,
 				5F7A61EB205ECD0600E2F21F /* BaseViewModel.swift in Sources */,
 				5F925F2E205EA8FD009BFBAC /* ListCousineViewModel.swift in Sources */,
@@ -403,6 +474,7 @@
 				5F7A61E5205EC96E00E2F21F /* Store.swift in Sources */,
 				5F925F28205EA100009BFBAC /* Cousine.swift in Sources */,
 				5F925F2B205EA2D2009BFBAC /* ListCousineViewController.swift in Sources */,
+				5F7A620F205EF4A900E2F21F /* LoginViewModel.swift in Sources */,
 				5F925F34205EAD50009BFBAC /* CousineTableViewCell.swift in Sources */,
 				5F7A61F9205EE4CB00E2F21F /* ListProductsViewController.swift in Sources */,
 				5F925F25205EA062009BFBAC /* APIClient.swift in Sources */,

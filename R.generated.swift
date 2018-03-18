@@ -36,23 +36,44 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
+    /// Nib `CartViewController`.
+    static let cartViewController = _R.nib._CartViewController()
     /// Nib `CousineTableViewCell`.
     static let cousineTableViewCell = _R.nib._CousineTableViewCell()
+    /// Nib `LoginViewController`.
+    static let loginViewController = _R.nib._LoginViewController()
     /// Nib `ProductsTableViewCell`.
     static let productsTableViewCell = _R.nib._ProductsTableViewCell()
+    /// Nib `SignUpViewController`.
+    static let signUpViewController = _R.nib._SignUpViewController()
     /// Nib `StoreTableViewCell`.
     static let storeTableViewCell = _R.nib._StoreTableViewCell()
+    
+    /// `UINib(name: "CartViewController", in: bundle)`
+    static func cartViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.cartViewController)
+    }
     
     /// `UINib(name: "CousineTableViewCell", in: bundle)`
     static func cousineTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.cousineTableViewCell)
     }
     
+    /// `UINib(name: "LoginViewController", in: bundle)`
+    static func loginViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loginViewController)
+    }
+    
     /// `UINib(name: "ProductsTableViewCell", in: bundle)`
     static func productsTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.productsTableViewCell)
+    }
+    
+    /// `UINib(name: "SignUpViewController", in: bundle)`
+    static func signUpViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.signUpViewController)
     }
     
     /// `UINib(name: "StoreTableViewCell", in: bundle)`
@@ -93,8 +114,84 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 10 localization keys.
+    struct localizable {
+      /// Value: Add
+      static let productAddToCartAdd = Rswift.StringResource(key: "product.add.to.cart.add", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Add To Cart
+      static let productAddToCartTitle = Rswift.StringResource(key: "product.add.to.cart.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Cancel
+      static let productAddToCartCancel = Rswift.StringResource(key: "product.add.to.cart.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Clear Cart
+      static let cartClearCart = Rswift.StringResource(key: "cart.clear.cart", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Do you want to add this product to your cart?
+      static let productAddToCartMessage = Rswift.StringResource(key: "product.add.to.cart.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: E-mail:
+      static let loginEmail = Rswift.StringResource(key: "login.email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Password:
+      static let loginPassword = Rswift.StringResource(key: "login.password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Place Order
+      static let cartPlaceOrder = Rswift.StringResource(key: "cart.place.order", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Sign In
+      static let loginSignin = Rswift.StringResource(key: "login.signin", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Sign Up
+      static let loginSignup = Rswift.StringResource(key: "login.signup", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: Add
+      static func productAddToCartAdd(_: Void = ()) -> String {
+        return NSLocalizedString("product.add.to.cart.add", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Add To Cart
+      static func productAddToCartTitle(_: Void = ()) -> String {
+        return NSLocalizedString("product.add.to.cart.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Cancel
+      static func productAddToCartCancel(_: Void = ()) -> String {
+        return NSLocalizedString("product.add.to.cart.cancel", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Clear Cart
+      static func cartClearCart(_: Void = ()) -> String {
+        return NSLocalizedString("cart.clear.cart", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Do you want to add this product to your cart?
+      static func productAddToCartMessage(_: Void = ()) -> String {
+        return NSLocalizedString("product.add.to.cart.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: E-mail:
+      static func loginEmail(_: Void = ()) -> String {
+        return NSLocalizedString("login.email", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Password:
+      static func loginPassword(_: Void = ()) -> String {
+        return NSLocalizedString("login.password", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Place Order
+      static func cartPlaceOrder(_: Void = ()) -> String {
+        return NSLocalizedString("cart.place.order", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Sign In
+      static func loginSignin(_: Void = ()) -> String {
+        return NSLocalizedString("login.signin", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Sign Up
+      static func loginSignup(_: Void = ()) -> String {
+        return NSLocalizedString("login.signup", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -113,6 +210,17 @@ struct R: Rswift.Validatable {
 
 struct _R {
   struct nib {
+    struct _CartViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CartViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _CousineTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = CousineTableViewCell
       
@@ -127,6 +235,17 @@ struct _R {
       fileprivate init() {}
     }
     
+    struct _LoginViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LoginViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _ProductsTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = ProductsTableViewCell
       
@@ -136,6 +255,17 @@ struct _R {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ProductsTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProductsTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _SignUpViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SignUpViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
       
       fileprivate init() {}

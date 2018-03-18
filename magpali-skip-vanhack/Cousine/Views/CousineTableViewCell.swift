@@ -21,4 +21,9 @@ class CousineTableViewCell: UITableViewCell {
         nameLabel.text = cousine.name
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.text = nil
+    }
+    
 }
