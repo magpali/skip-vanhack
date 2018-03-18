@@ -18,5 +18,17 @@ class APIClient {
             .map([Cousine].self)
             .asObservable()
     }
+    
+    static func listStore(by cousineId: Int) -> Observable<[Store]> {
+        return DefaultProvider.rx.request(.listStore(cousineId: cousineId))
+            .map([Store].self)
+            .asObservable()
+    }
+    
+    static func listProducts(by storeId: Int) -> Observable<[Product]> {
+        return DefaultProvider.rx.request(.listProducts(storeId: storeId))
+            .map([Product].self)
+            .asObservable()
+    }
 
 }

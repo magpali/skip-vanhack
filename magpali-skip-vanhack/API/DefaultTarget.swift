@@ -11,6 +11,8 @@ import Moya
 
 enum DefaultTarget {
     case listCousine()
+    case listStore(cousineId: Int)
+    case listProducts(storeId: Int)
 }
 
 extension DefaultTarget: TargetType {
@@ -22,12 +24,16 @@ extension DefaultTarget: TargetType {
         switch self {
         case .listCousine:
             return "Cousine"
+        case .listStore(let cousineId):
+            return "Cousine/\(cousineId)/stores"
+        case .listProducts(let storeId):
+            return "Store/\(storeId)/products"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .listCousine:
+        case .listCousine, .listStore, .listProducts:
             return .get
         }
     }
@@ -47,7 +53,7 @@ extension DefaultTarget: TargetType {
     
     var parameters: [String: Any]? {
         switch self {
-        case .listCousine:
+        case .listCousine, .listStore, .listProducts:
             return nil
         }
     }

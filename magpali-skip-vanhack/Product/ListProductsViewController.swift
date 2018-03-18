@@ -1,5 +1,5 @@
 //
-//  ListCousine.swift
+//  ListProductsViewController.swift
 //  magpali-skip-vanhack
 //
 //  Created by Victor Robertson on 18/03/18.
@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 import Cartography
 
-class ListCousineViewController: UIViewController {
+class ListProductsViewController: UIViewController {
     
-    let viewModel = ListCousineViewModel()
+    let viewModel: ListProductsViewModel
     
     let disposeBag = DisposeBag()
     
@@ -21,31 +21,39 @@ class ListCousineViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(R.nib.cousineTableViewCell(),
-                           forCellReuseIdentifier: R.reuseIdentifier.cousineTableViewCell.identifier)
+        tableView.register(R.nib.productsTableViewCell(),
+                           forCellReuseIdentifier: R.reuseIdentifier.productsTableViewCell.identifier)
         tableView.tableFooterView = UIView()
         tableView.refreshControl = refreshControll
         return tableView
     }()
     
+    init(storeId: Int, storeName: String) {
+        viewModel = ListProductsViewModel(storeId: storeId)
+        super.init(nibName: nil, bundle: nil)
+        self.title = storeName
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
-        title = "Cousines"
-        
         addSubviews()
         bind()
-
+        
     }
     
     func bind() {
         
-        viewModel.cousines.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: R.reuseIdentifier.cousineTableViewCell.identifier,
-                                         cellType: CousineTableViewCell.self)) { _, element, cell in
+        viewModel.products.asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: R.reuseIdentifier.productsTableViewCell.identifier,
+                                         cellType: ProductsTableViewCell.self)) { _, element, cell in
                                             cell.populate(with: element)
             }.disposed(by: disposeBag)
         
         refreshControll.rx.controlEvent(.valueChanged).subscribe(onNext: { [weak self] (_) in
-            self?.viewModel.listCousine()
+            self?.viewModel.refreshProducts()
         }).disposed(by: disposeBag)
         
         viewModel.loading.asObservable().subscribe(onNext: { [weak self] (value) in
@@ -57,9 +65,7 @@ class ListCousineViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         tableView.rx.itemSelected.asObservable().subscribe(onNext: { [weak self] (indexPath) in
-            guard let cousineId = self?.viewModel.cousines.value[indexPath.row].id else { return }
-            let storesViewController = ListStoresViewController(cousineId: cousineId)
-            self?.navigationController?.pushViewController(storesViewController, animated: true)
+            print(indexPath.row)
         }).disposed(by: disposeBag)
         
     }
@@ -70,5 +76,8 @@ class ListCousineViewController: UIViewController {
             tableView.edges == view.edges
         }
     }
-
+    
 }
+
+
+

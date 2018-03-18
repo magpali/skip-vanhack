@@ -14,13 +14,18 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var tabBar: UITabBarController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = ListCousineViewController()
-        vc.view.backgroundColor = .green
-        window?.rootViewController = vc
-        
+        let tab = UITabBarController()
+        let cousineVc = ListCousineViewController()
+        let nav = UINavigationController(rootViewController: cousineVc)
+        let cart = UIViewController()
+        cart.title = "Cart"
+        tab.setViewControllers([nav, cart], animated: true)
+        window?.rootViewController = tab
+        tabBar = tab
         return true
     }
     

@@ -36,23 +36,41 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `CousineTableViewCell`.
     static let cousineTableViewCell = _R.nib._CousineTableViewCell()
+    /// Nib `ProductsTableViewCell`.
+    static let productsTableViewCell = _R.nib._ProductsTableViewCell()
+    /// Nib `StoreTableViewCell`.
+    static let storeTableViewCell = _R.nib._StoreTableViewCell()
     
     /// `UINib(name: "CousineTableViewCell", in: bundle)`
     static func cousineTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.cousineTableViewCell)
     }
     
+    /// `UINib(name: "ProductsTableViewCell", in: bundle)`
+    static func productsTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.productsTableViewCell)
+    }
+    
+    /// `UINib(name: "StoreTableViewCell", in: bundle)`
+    static func storeTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.storeTableViewCell)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `cousineTableViewCell`.
     static let cousineTableViewCell: Rswift.ReuseIdentifier<CousineTableViewCell> = Rswift.ReuseIdentifier(identifier: "cousineTableViewCell")
+    /// Reuse identifier `productsTableViewCell`.
+    static let productsTableViewCell: Rswift.ReuseIdentifier<ProductsTableViewCell> = Rswift.ReuseIdentifier(identifier: "productsTableViewCell")
+    /// Reuse identifier `storeTableViewCell`.
+    static let storeTableViewCell: Rswift.ReuseIdentifier<StoreTableViewCell> = Rswift.ReuseIdentifier(identifier: "storeTableViewCell")
     
     fileprivate init() {}
   }
@@ -104,6 +122,34 @@ struct _R {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> CousineTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CousineTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _ProductsTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ProductsTableViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "productsTableViewCell"
+      let name = "ProductsTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ProductsTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProductsTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _StoreTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = StoreTableViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "storeTableViewCell"
+      let name = "StoreTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> StoreTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StoreTableViewCell
       }
       
       fileprivate init() {}

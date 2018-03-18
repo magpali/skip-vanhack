@@ -11,10 +11,10 @@ import UIKit
 class CousineTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        nameLabel.font = .boldSystemFont(ofSize: 20)
     }
 
     func populate(with cousine: Cousine) {
