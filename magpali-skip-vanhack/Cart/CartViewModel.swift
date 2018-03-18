@@ -28,7 +28,20 @@ class CartViewModel: BaseViewModel {
     }
     
     func placeOrder() {
-        
+        //TODO: GROUP ORDERS BY STORE ID BEFORE PLACING ORDER
+        //TODO: GET USER INFO 'CONTACT + DELIVERY ADDRESS' BEFORE PLACING ORDER
+        self.loading.value = true
+        APIClient.placeOrder(cartList.value).subscribe { [unowned self] (event) in
+            switch event {
+            case .next:
+                print("it works")
+                break
+            case .error(let error):
+                self.error.value = error
+            case .completed:
+                self.loading.value = false
+            }
+        }.disposed(by: disposeBag)
     }
     
     func userIsAuthenticated() -> Bool {

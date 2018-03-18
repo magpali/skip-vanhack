@@ -27,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tab
         tabBar = tab
         
-        AuthHelper.logOut()
-        
         return true
     }
     

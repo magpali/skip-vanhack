@@ -15,6 +15,7 @@ enum DefaultTarget {
     case listProducts(storeId: Int)
     case login(email: String, password: String)
     case signUp(email: String, name: String, address: String, password: String)
+    case placeOrder(products: [Product])
 }
 
 extension DefaultTarget: TargetType {
@@ -34,6 +35,8 @@ extension DefaultTarget: TargetType {
             return "Customer/auth"
         case .signUp:
             return "Customer"
+        case .placeOrder:
+            return "Order"
         }
     }
     
@@ -41,7 +44,7 @@ extension DefaultTarget: TargetType {
         switch self {
         case .listCousine, .listStore, .listProducts:
             return .get
-        case .login, .signUp:
+        case .login, .signUp, .placeOrder:
             return .post
         }
     }
@@ -73,12 +76,26 @@ extension DefaultTarget: TargetType {
                     "name": name as Any,
                     "address": address as Any,
                     "password": password as Any]
+        case .placeOrder(let products):
+            let productIds = products.map({ (product) -> [String: Int] in
+                    return ["productId": product.id!]
+                })
+            return ["contact": "Test" as Any,
+                    "deliveryAddress": "Test Address" as Any,
+                    "status": "waiting" as Any,
+                    "storeId": products[0].storeId! as Any,
+                    "orderItems": productIds as Any]
         case .listCousine, .listStore, .listProducts:
             return nil
         }
     }
     
     var parameterEncoding: ParameterEncoding {
-        return URLEncoding.queryString
+        switch self {
+        case .placeOrder:
+            return JSONEncoding.prettyPrinted
+        default:
+            return URLEncoding.queryString
+        }
     }
 }

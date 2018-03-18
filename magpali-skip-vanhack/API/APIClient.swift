@@ -42,5 +42,11 @@ class APIClient {
             .mapString()
             .asObservable()
     }
+    
+    static func placeOrder(_ products: [Product]) -> Observable<Void> {
+        return DefaultProvider.rx.request(.placeOrder(products: products))
+            .map({ (_) -> Void in })
+            .asObservable()
+    }
 
 }
