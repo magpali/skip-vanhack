@@ -15,7 +15,11 @@
 		5F925F23205E9E89009BFBAC /* DefaultTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F22205E9E89009BFBAC /* DefaultTarget.swift */; };
 		5F925F25205EA062009BFBAC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F24205EA062009BFBAC /* APIClient.swift */; };
 		5F925F28205EA100009BFBAC /* Cousine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F27205EA100009BFBAC /* Cousine.swift */; };
-		5F925F2B205EA2D2009BFBAC /* ListCousine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F2A205EA2D2009BFBAC /* ListCousine.swift */; };
+		5F925F2B205EA2D2009BFBAC /* ListCousineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F2A205EA2D2009BFBAC /* ListCousineViewController.swift */; };
+		5F925F2E205EA8FD009BFBAC /* ListCousineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F2D205EA8FD009BFBAC /* ListCousineViewModel.swift */; };
+		5F925F34205EAD50009BFBAC /* CousineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F32205EAD50009BFBAC /* CousineTableViewCell.swift */; };
+		5F925F35205EAD50009BFBAC /* CousineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F925F33205EAD50009BFBAC /* CousineTableViewCell.xib */; };
+		5F925F38205EAF0E009BFBAC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F925F37205EAF0E009BFBAC /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +33,11 @@
 		5F925F22205E9E89009BFBAC /* DefaultTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTarget.swift; sourceTree = "<group>"; };
 		5F925F24205EA062009BFBAC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5F925F27205EA100009BFBAC /* Cousine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cousine.swift; sourceTree = "<group>"; };
-		5F925F2A205EA2D2009BFBAC /* ListCousine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCousine.swift; sourceTree = "<group>"; };
+		5F925F2A205EA2D2009BFBAC /* ListCousineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCousineViewController.swift; sourceTree = "<group>"; };
+		5F925F2D205EA8FD009BFBAC /* ListCousineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCousineViewModel.swift; sourceTree = "<group>"; };
+		5F925F32205EAD50009BFBAC /* CousineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CousineTableViewCell.swift; sourceTree = "<group>"; };
+		5F925F33205EAD50009BFBAC /* CousineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CousineTableViewCell.xib; sourceTree = "<group>"; };
+		5F925F37205EAF0E009BFBAC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		889274647A87BC63C004AD7C /* Pods-magpali-skip-vanhack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-magpali-skip-vanhack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-magpali-skip-vanhack/Pods-magpali-skip-vanhack.debug.xcconfig"; sourceTree = "<group>"; };
 		C295F4F7D00BC4F9DFCFB246 /* Pods_magpali_skip_vanhack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_magpali_skip_vanhack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,10 +75,11 @@
 		5F7309B7205E98FB0090869E /* magpali-skip-vanhack */ = {
 			isa = PBXGroup;
 			children = (
-				5F925F29205EA2B7009BFBAC /* ViewControllers */,
+				5F925F2C205EA8B9009BFBAC /* Cousine */,
 				5F925F26205EA0F3009BFBAC /* Model */,
 				5F925F21205E9E66009BFBAC /* API */,
 				5F7309B8205E98FB0090869E /* AppDelegate.swift */,
+				5F925F37205EAF0E009BFBAC /* R.generated.swift */,
 				5F7309C2205E98FB0090869E /* Assets.xcassets */,
 				5F7309C4205E98FB0090869E /* LaunchScreen.storyboard */,
 				5F7309C7205E98FB0090869E /* Info.plist */,
@@ -96,12 +105,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5F925F29205EA2B7009BFBAC /* ViewControllers */ = {
+		5F925F2C205EA8B9009BFBAC /* Cousine */ = {
 			isa = PBXGroup;
 			children = (
-				5F925F2A205EA2D2009BFBAC /* ListCousine.swift */,
+				5F925F2F205EAC21009BFBAC /* Views */,
+				5F925F2D205EA8FD009BFBAC /* ListCousineViewModel.swift */,
+				5F925F2A205EA2D2009BFBAC /* ListCousineViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Cousine;
+			sourceTree = "<group>";
+		};
+		5F925F2F205EAC21009BFBAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F925F32205EAD50009BFBAC /* CousineTableViewCell.swift */,
+				5F925F33205EAD50009BFBAC /* CousineTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		879230AE1086A999DBDB521C /* Pods */ = {
@@ -129,6 +149,7 @@
 			buildConfigurationList = 5F7309CA205E98FB0090869E /* Build configuration list for PBXNativeTarget "magpali-skip-vanhack" */;
 			buildPhases = (
 				8FC648D7C92D7A18EA5E02BC /* [CP] Check Pods Manifest.lock */,
+				5F925F36205EAEBC009BFBAC /* R.swift Generate */,
 				5F7309B1205E98FB0090869E /* Sources */,
 				5F7309B2205E98FB0090869E /* Frameworks */,
 				5F7309B3205E98FB0090869E /* Resources */,
@@ -183,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F925F35205EAD50009BFBAC /* CousineTableViewCell.xib in Resources */,
 				5F7309C6205E98FB0090869E /* LaunchScreen.storyboard in Resources */,
 				5F7309C3205E98FB0090869E /* Assets.xcassets in Resources */,
 			);
@@ -205,6 +227,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-magpali-skip-vanhack/Pods-magpali-skip-vanhack-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5F925F36205EAEBC009BFBAC /* R.swift Generate */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "R.swift Generate";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
 		};
 		8FC648D7C92D7A18EA5E02BC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -232,15 +268,21 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-magpali-skip-vanhack/Pods-magpali-skip-vanhack-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,9 +299,12 @@
 			files = (
 				5F925F23205E9E89009BFBAC /* DefaultTarget.swift in Sources */,
 				5F7309B9205E98FB0090869E /* AppDelegate.swift in Sources */,
+				5F925F38205EAF0E009BFBAC /* R.generated.swift in Sources */,
 				5F7309C1205E98FB0090869E /* magpali_skip_vanhack.xcdatamodeld in Sources */,
+				5F925F2E205EA8FD009BFBAC /* ListCousineViewModel.swift in Sources */,
 				5F925F28205EA100009BFBAC /* Cousine.swift in Sources */,
-				5F925F2B205EA2D2009BFBAC /* ListCousine.swift in Sources */,
+				5F925F2B205EA2D2009BFBAC /* ListCousineViewController.swift in Sources */,
+				5F925F34205EAD50009BFBAC /* CousineTableViewCell.swift in Sources */,
 				5F925F25205EA062009BFBAC /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

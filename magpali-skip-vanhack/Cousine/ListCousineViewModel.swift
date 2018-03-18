@@ -1,5 +1,5 @@
 //
-//  ListCousine.swift
+//  ListCousineViewModel.swift
 //  magpali-skip-vanhack
 //
 //  Created by Victor Robertson on 18/03/18.
@@ -9,25 +9,29 @@
 import UIKit
 import RxSwift
 
-class ListCousine: UIViewController {
+class ListCousineViewModel {
     
     let disposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        
-        view.backgroundColor = .purple
-        
+    let error = Variable<Error?>(nil)
+    let cousines: Variable<[Cousine]> = Variable<[Cousine]>([])
+    
+    init() {
+        listCousine()
+    }
+    
+    func listCousine() {
         APIClient.listCousine().subscribe { (event) in
             switch event {
             case .next(let cousines):
-                print(cousines[0].id)
-                print(cousines[0].name)
+                self.error.value = nil
+                self.cousines.value = cousines
             case .error(let error):
-                print(error)
+                self.error.value = error
             case .completed:
                 break
             }
         }.disposed(by: disposeBag)
     }
-
+    
 }
