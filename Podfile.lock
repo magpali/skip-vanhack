@@ -1,23 +1,37 @@
 PODS:
   - Alamofire (4.7.0)
-  - Moya (11.0.1):
-    - Moya/Core (= 11.0.1)
+  - Cartography (3.0.1)
   - Moya/Core (11.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - Moya/RxSwift (11.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
   - Result (3.2.4)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
-  - Moya (~> 11.0)
+  - Cartography (~> 3.0)
+  - Moya/RxSwift (~> 11.0)
+  - R.swift (~> 4.0)
+  - RxCocoa (~> 4.1)
   - RxSwift (~> 4.1)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
   Moya: 3d594ada51a21cc02b18739ab578a1984f900c8a
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: 1c3bac3f4fd0b527fcf49e5b5221789907da98db
+PODFILE CHECKSUM: 284e2265ac99f796fed65df728df683c520951d0
 
 COCOAPODS: 1.4.0
